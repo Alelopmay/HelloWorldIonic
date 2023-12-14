@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>mis notas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing..."></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let note of noteS.notes$ | async; let i = index"
+     >
+      <ion-item-options side="start">
+        <ion-item-option color="primary" (click)="editNote(note)">
+          <ion-icon slot="start" src="assets/icons/create.svg" style="zoom: 1.5;"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+      <ion-item  (click)="openNoteDetailModal($event, note)">
+        <ion-thumbnail slot="start">
+          <img *ngIf="note.photo" [src]="note.photo" alt="Note Image">
+        </ion-thumbnail>
+        <ion-label>{{ note.title }}</ion-label>
+        <p>{{ note.description }}</p>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" expandable (click)="deleteNote(note)">
+          <ion-icon slot="start" src="assets/icons/trash.svg" style="zoom: 1.5;"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

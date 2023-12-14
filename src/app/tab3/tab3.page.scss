@@ -1,0 +1,38 @@
+.resume-card {
+  max-width: 400px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #222; /* Fondo oscuro menos claro */
+  color: #000000; /* Letras blancas */
+}
+
+.education-list {
+  padding-left: 15px;
+  margin-top: 10px;
+}
+
+ion-item {
+  margin-bottom: 8px;
+  color: #000000; /* Letras blancas */
+}
+
+strong {
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+}
+
+ion-card-title {
+  color: #ffffff; /* Letras blancas */
+}
+
+ion-item, ion-text {
+  color: #000000; /* Letras blancas */
+}
+
+ion-card-content {
+  padding: 16px;
+}

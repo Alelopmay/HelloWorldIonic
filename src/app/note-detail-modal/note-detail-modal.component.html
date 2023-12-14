@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>{{ note?.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <!-- Mueve el título debajo de la imagen -->
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img [src]="note?.photo" alt="Note Image" class="custom-image">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ note?.title }}</h2>
+        <p>{{ note?.description }}</p>
+      </ion-label>
+    </ion-item>
+
+    <!-- Añade un nuevo ion-item para el mapa -->
+    <ion-item>
+      <div id="noteDetailMap" style="height: 300px; width: 100%;"></div>
+    </ion-item>
+  </ion-list>
+</ion-content>
